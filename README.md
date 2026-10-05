@@ -11,11 +11,18 @@ The project is intended to practice Linux system programming, network programmin
 - Watch path configuration
 - Server IP configuration
 - TCP port validation
+- Makefile-based build
 
 ## Build
 
 ```bash
-gcc -Wall -Wextra -Wpedantic -Iinclude src/main.c src/config.c -o miniguard
+make
+```
+
+To remove build artifacts:
+
+```bash
+make clean
 ```
 
 ## Usage
@@ -43,6 +50,7 @@ miniguard/
 │   ├── main.c
 │   └── config.c
 ├── .gitignore
+├── Makefile
 └── README.md
 ```
 
