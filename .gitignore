@@ -1,0 +1,4 @@
+miniguard
+*.o
+*.out
+core
