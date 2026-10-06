@@ -26,8 +26,8 @@ int parse_arguments(int argc, char *argv[], AppConfig *config)
         return -1;
 
     // Server address
-    written = snprintf(config->server_ip, sizeof(config->server_ip), "%s", argv[4]);
-    if (written < 0 || (size_t)written >= sizeof(config->server_ip))
+    written = snprintf(config->server_host, sizeof(config->server_host), "%s", argv[4]);
+    if (written < 0 || (size_t)written >= sizeof(config->server_host))
         return -1;
 
     // Parse and validate the destination port.
@@ -41,15 +41,15 @@ int parse_arguments(int argc, char *argv[], AppConfig *config)
     }
     if (end == argv[6] || *end != '\0' || port < 1 || port > 65535)
         return -1;
-    config->port = (int)port;
+    config->server_port = (int)port;
 
     return 0;
 }
 
 void print_config(const AppConfig *config)
 {
-    puts("MiniGuard configuration");
-    printf("watch_path : %s\n", config->watch_path);
-    printf("server     : %s\n", config->server_ip);
-    printf("port       : %d\n", config->port);
+    puts("MiniGuard Configuration");
+    printf("watch path  : %s\n", config->watch_path);
+    printf("server host : %s\n", config->server_host);
+    printf("server port : %d\n", config->server_port);
 }
