@@ -9,9 +9,12 @@ The project is intended to practice Linux system programming, network programmin
 - Command-line argument parsing
 - Configuration validation
 - Watch path configuration
-- Server IP configuration
-- TCP port validation
+- Server address configuration
+- Destination port validation
 - Makefile-based build
+- File-system monitoring with Linux inotify
+- Continuous monitoring of file-system events
+- File creation, modification, deletion, and move event detection
 
 ## Build
 
@@ -46,9 +49,11 @@ port       : 9000
 miniguard/
 ├── include/
 │   └── config.h
+│   └── watcher.h
 ├── src/
 │   ├── main.c
 │   └── config.c
+│   └── watcher.c
 ├── .gitignore
 ├── Makefile
 └── README.md
@@ -56,8 +61,6 @@ miniguard/
 
 ## Roadmap
 
-- File-system monitoring with inotify
-- File creation, modification, deletion, and move event detection
 - TCP event transmission
 - Graceful shutdown with signal handling
 - I/O multiplexing with poll or epoll

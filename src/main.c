@@ -1,7 +1,7 @@
-#include <stdio.h>
-
 #include "config.h"
 #include "watcher.h"
+
+#include <stdio.h>
 
 int main(int argc, char *argv[])
 {
